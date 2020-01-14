@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://lanVoyager.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="This is my first post of this blog, which I should have documented why and how I made the decision along the way back in May 2019 to quit my job and start my sabbtical on traveling South America and h">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Initial Setup">
+<meta property="og:url" content="https://lanVoyager.github.io/posts/90aeeb0d/index.html">
+<meta property="og:site_name" content="lanVoyager | toHave-N-haveNot">
+<meta property="og:description" content="This is my first post of this blog, which I should have documented why and how I made the decision along the way back in May 2019 to quit my job and start my sabbtical on traveling South America and h">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-01-14T18:24:25.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo Initial Setup">
+<meta name="twitter:description" content="This is my first post of this blog, which I should have documented why and how I made the decision along the way back in May 2019 to quit my job and start my sabbtical on traveling South America and h">
+
+<link rel="canonical" href="https://lanVoyager.github.io/posts/90aeeb0d/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Hexo Initial Setup | lanVoyager | toHave-N-haveNot</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lanVoyager | toHave-N-haveNot</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">大道无形</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://lanVoyager.github.io/posts/90aeeb0d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lanVoyager">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lanVoyager | toHave-N-haveNot">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo Initial Setup
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-15 17:38:12" itemprop="dateCreated datePublished" datetime="2019-07-15T17:38:12-07:00">2019-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-14 11:24:25" itemprop="dateModified" datetime="2020-01-14T11:24:25-07:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nerdyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">nerdyNotes</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>This is my first post of this blog, which I should have documented why and how I made the decision along the way back in May 2019 to quit my job and start my sabbtical on traveling South America and hopefully Africa. Now it’s July 15, 2019, I was distracted by many other tasks, and interests since the day of my big decision.  The post actually documented why and how I created this blog. It is a boring technical blog, I enjoyed it very much.  Anyway, I am not good at writing prose in English nor in Chinese anyway. So take it or leave it!</p>
+<a id="more"></a>
+
+<h1 id="Why-Hexo"><a href="#Why-Hexo" class="headerlink" title="Why Hexo?"></a>Why Hexo?</h1><p>Besides documenting my voyager, the blog is a side project to keep myself entertained. I have basic knowledge in Javascript, HTML, and CSS and that’s all I know about website development. </p>
+<p>The goal here was to hopefully create something interesting and learn some new languages…(OK, family said I should spend more time learning the real useful language SPANISH. So far I am still counting uno, dos, tres…progress is really sloooooooooow here) </p>
+<p>Anyway, below is my requirements when I chose the blog generator:</p>
+<ul>
+<li>highly customizable or allow me to write some scripting. This is the entertainment! Therefore, Facebook and WeChat are OUT! </li>
+<li>FREE…yes at least at this very initial stage. Remember, I have just quitted my job…</li>
+<li>Pretty according to my personal taste! My initial test readers, I know you don’t like this current black and white theme. </li>
+</ul>
+<p>So I googled couple of hours and chose Hexo, again to my personal taste only not after lots of technical review. At that time, I didn’t even know what is node.js, static site generator, etc. Who cares? Its name sounds nice and the sample themes are pretty.</p>
+<p>To complete my simple review, it seems that the popular static site generators are:</p>
+<ul>
+<li><a href="https://jekyllrb.com/" rel="external nofollow noopener noreferrer" target="_blank">Jekyll</a></li>
+<li><a href="https://gohugo.io/" rel="external nofollow noopener noreferrer" target="_blank">Hugo</a></li>
+<li><a href="https://hexo.io/" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a></li>
+</ul>
+<h1 id="Hexo-Blog-Creation-amp-Host"><a href="#Hexo-Blog-Creation-amp-Host" class="headerlink" title="Hexo Blog Creation &amp; Host"></a>Hexo Blog Creation &amp; Host</h1><p>So far, I am on my day 6 of Hexo. My current structure is Hexo + Github Hosting. There are lots of instructions from the website and if you can read Chinese, that’s even better. One of cons of Hexo is the majority of the community is non-English speakers, mainly Chinese. But this is not an issue to me. </p>
+<p>Creating the initial Hexo blog is relatively easy, should be up within couple of hours. Here is a good post for your reference:</p>
+<p><a href="https://ericdouglas.github.io/2016/08/21/how-to-create-a-blog-with-hexo/" rel="external nofollow noopener noreferrer" target="_blank">https://ericdouglas.github.io/2016/08/21/how-to-create-a-blog-with-hexo/</a></p>
+<p>For the theme, I selected <code>next</code>. This is one of the most popular theme with fairly good selection of plugins &amp; online resources. Not perfect to my taste, but good enough for me to start.</p>
+<p>As for the markdown editor, I use <a href="https://typora.io/" rel="external nofollow noopener noreferrer" target="_blank">Typora</a>. No special reasons, simply for its appearance!</p>
+<h1 id="My-Hexo-Blog-Dev-Log"><a href="#My-Hexo-Blog-Dev-Log" class="headerlink" title="My Hexo Blog Dev Log"></a>My Hexo Blog Dev Log</h1><p>Milestones &amp; Features as of July 15, 2019:</p>
+<ul>
+<li><p>Initial Deployment Up &amp; Running: July 9, 2019</p>
+</li>
+<li><p>Theme selection &amp; basic customization: July 11, 2019</p>
+</li>
+<li><p>Embedded R script markdown, R shinny app, &amp; leaflet interactive maps: July 13, 2019 </p>
+<p>Lan: this I struggled two nights! Solution is actually simple but after many trial-and-error. I gave up all the plugins, and ended up with embedding HTML in markdown…here is how I did it.</p>
+</li>
+<li><p>Initial blog soft launch &amp; presentation to my family: July 14, 2019</p>
+<p>Lan: I thought I have made substantial breakthrough on July 13, 2019. I have R script with plots, interactive shiny apps, and leaflet map up and running, though all three were made with very basic functions. It turned out that NONE of the readers were interested…They asked for colorful template, the <code>thrumb up</code> button, the comments blocks for real interactions, more pictures (hey, I have not even started my voyager yet!), music player?! \ (╯-╰) /    </p>
+</li>
+<li><p>First post: July 15, 2019</p>
+</li>
+</ul>
+<p>Features to be developed before my departure date August 20, 2019:</p>
+<p>Special requirement: the following should be available for both US &amp; China mainland. Surprisingly, it’s not an simple task…</p>
+<ul>
+<li>Image Repository: not push to Github due to its size limitation</li>
+<li>Music Player</li>
+<li>Comment Plug-in</li>
+<li>Google Analytic Plug-in</li>
+<li>Sitemap</li>
+<li>RSS</li>
+<li>Bilingual Page: this is not a trivial task. Tried several approaches, but none of them is perfect so far</li>
+<li>Theme customization: low priority </li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/posts/a6eb593f/" rel="next" title="hexoTips">
+      hexoTips <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-Hexo"><span class="nav-number">1.</span> <span class="nav-text">Why Hexo?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Blog-Creation-amp-Host"><span class="nav-number">2.</span> <span class="nav-text">Hexo Blog Creation &amp; Host</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#My-Hexo-Blog-Dev-Log"><span class="nav-number">3.</span> <span class="nav-text">My Hexo Blog Dev Log</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lanVoyager</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lanVoyager</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">124k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:52</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

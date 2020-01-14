@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://lanVoyager.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="A MUST READ ARTICLE. It discusses adding js files as audio player with customerized CSS. I think with these two skills, you can implement anything on Hexo blog. With an exception to reaching users fro">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo - Add Audio Player">
+<meta property="og:url" content="https://lanVoyager.github.io/posts/cc037a0/index.html">
+<meta property="og:site_name" content="lanVoyager | toHave-N-haveNot">
+<meta property="og:description" content="A MUST READ ARTICLE. It discusses adding js files as audio player with customerized CSS. I think with these two skills, you can implement anything on Hexo blog. With an exception to reaching users fro">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.dropbox.com/s/eti5rkje5bh33s5/2019-08-01_0545.png?raw=1">
+<meta property="og:updated_time" content="2020-01-14T18:24:25.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo - Add Audio Player">
+<meta name="twitter:description" content="A MUST READ ARTICLE. It discusses adding js files as audio player with customerized CSS. I think with these two skills, you can implement anything on Hexo blog. With an exception to reaching users fro">
+<meta name="twitter:image" content="https://www.dropbox.com/s/eti5rkje5bh33s5/2019-08-01_0545.png?raw=1">
+
+<link rel="canonical" href="https://lanVoyager.github.io/posts/cc037a0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Hexo - Add Audio Player | lanVoyager | toHave-N-haveNot</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lanVoyager | toHave-N-haveNot</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">大道无形</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://lanVoyager.github.io/posts/cc037a0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lanVoyager">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lanVoyager | toHave-N-haveNot">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo - Add Audio Player
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-01 02:45:29" itemprop="dateCreated datePublished" datetime="2019-08-01T02:45:29-07:00">2019-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-14 11:24:25" itemprop="dateModified" datetime="2020-01-14T11:24:25-07:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nerdyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">nerdyNotes</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>A MUST READ ARTICLE. It discusses adding js files as audio player with customerized CSS. I think with these two skills, you can implement anything on Hexo blog. With an exception to reaching users from mainland China, though it’s not a technical issue…</p>
+<a id="more"></a>
+
+<p>Day 22 with Hexo: In the past 7 days, I have been struggling with non-technical issues with my blog. Trying to make this blog accessible to mainland China and of course the rest of the world seems to be <strong>MISSION IMPOSSIBLE</strong>. NO politics here, but it is really hard and time consuming meaninglessly!!! The popular cloud services like GoogleDrive, OneDrive, Dropbox etc. are blocked in China. Fine, I can use Chinese cloud service. I found a Chinese cloud service based in Shanghai China with good online reviews. To my surprise, in order to register an account, you need a Chinese mobile phone number which is now commonly required for most of Chinese websites. I can still find a way around it through my freinds in China, right? Then the second step is asking you to upload front and back pictures of your CHINESE NATIONAL ID?!?! I had to say <strong>I SURRENDER</strong> at this step. </p>
+<p>To my friends and family in China,</p>
+<blockquote>
+<p>I reach to you<br>I know you can feel it too<br>We’d make it through</p>
+<p>I SURRENDER by Celine Dion</p>
+</blockquote>
+<p>No pictures and songs for you.</p>
+<p>At the moment of writing this post, the following are tried and failed:</p>
+<ul>
+<li>Google Drive, OneDrive and Dropbox are all blocked in China. </li>
+<li>Baidu pan stopped providing the public share external link. </li>
+<li>Weibo by Sina was used by many Chinese bloggers as their image hosting site. After 7 years, it stopped this service in late April, 2019. Thank you, I don’t even need to try the painful registration process.</li>
+<li>Qiniu, hey, I was rejected as its customer. No comments here…</li>
+</ul>
+<p>I may find a way later. But let’s move on!</p>
+<h1 id="Theme-Song-of-Today"><a href="#Theme-Song-of-Today" class="headerlink" title="Theme Song of Today"></a>Theme Song of Today</h1><p>It’s another sad failure of my Hexo journey. Maybe it’s my problem but I can’t make the popular Hexo audio plugin (<a href="https://github.com/MoePlayer/hexo-tag-aplayer" rel="external nofollow noopener noreferrer" target="_blank">hexo-tag-aplayer</a>) working on my blog. No wonder of course, it does not support my Dropbox link for songs and most of popular Chinese music websites do NOT work overseas. And I don’t want use local assests since Github has limited page limits. OK, yes, you can also blame that I am using FREE services now. I guess MONEY can solve most of my problems.</p>
+<p>So my audio player looks something below:</p>
+<p><audio src="https://www.dropbox.com/s/r1w1kp6gex00xfa/Celine%20Dion%20-%20I%20SURRENDER.mp3?raw=1"></audio></p>
+<div class="player">
+  <img src="https://www.dropbox.com/s/eti5rkje5bh33s5/2019-08-01_0545.png?raw=1">
+  <div class="info">
+    <div class="name">I Surrender</div>
+    <div class="singer">Celine Dion</div>
+  </div>
+  <div class="btns">
+    <div class="iconfont play-pause icon-play"></div>
+    <div class="iconfont next icon-next"></div>
+  </div>
+  <div class="progress">
+  </div>
+</div>
+
+  <div class="progress">
+  </div>
+
+<h1 id="Another-Uncommon-Hexo-Approach"><a href="#Another-Uncommon-Hexo-Approach" class="headerlink" title="Another Uncommon Hexo Approach"></a>Another Uncommon Hexo Approach</h1><p>Simpliest appraoch for audio player is just use the HTML <audio> to directly ebmed your mp3 on the webpage. Below is the basic audio player generated by one line of <a href="https://www.w3schools.com/html/html5_audio.asp" rel="external nofollow noopener noreferrer" target="_blank">script</a>.</audio></p>
+<p><audio controls>   <source src="yourMP3 URL" type="audio/mpeg">Your browser does not support the audio element.</audio><br> <code>iframe</code> can be another option as well.</p>
+<p>With some googling, the one adpoted here is a customerized audio player I found online with very little changes of the CSS. So it will envolve adding customerized CSS &amp; JavaScript under HEXO. The scripts can be found <a href="https://codepen.io/anon/pen/MNevgq" rel="external nofollow noopener noreferrer" target="_blank">here</a>. </p>
+<p>Step 1: Prepare the CSS in Hexo. For the content, copy and paste from the above script link into your new CSS file to be used. In terms of adding CSS under Hexo, please refer to the process described in my previous post on <a href="https://lanVoyager.github.io/posts/ddb3530">LeafLet Map</a>.</p>
+<p>Step 2: Add JavaScript to Hexo</p>
+<p>2.1 copy paste the content of the source script and save it as yourAudioPlayer.js under <code>yourBlog\themes\next\source\js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$(</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> aud = $(<span class="string">'audio'</span>)[<span class="number">0</span>];</span><br><span class="line">  $(<span class="string">'.play-pause'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (aud.paused) &#123;</span><br><span class="line">    aud.play();</span><br><span class="line">    $(<span class="string">'.play-pause'</span>).removeClass(<span class="string">'icon-play'</span>);</span><br><span class="line">    $(<span class="string">'.play-pause'</span>).addClass(<span class="string">'icon-stop'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    aud.pause();</span><br><span class="line">    $(<span class="string">'.play-pause'</span>).removeClass(<span class="string">'icon-stop'</span>);</span><br><span class="line">    $(<span class="string">'.play-pause'</span>).addClass(<span class="string">'icon-play'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line">  $(<span class="string">'.next'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  aud.src = <span class="string">'another audio source'</span>;</span><br><span class="line">&#125;)</span><br><span class="line">  aud.ontimeupdate = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'.progress'</span>).css(<span class="string">'width'</span>, aud.currentTime / aud.duration * <span class="number">100</span> + <span class="string">'%'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>2.2 Open <code>_layout.swig</code> from the <code>yourBlog\themes\next\layout</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/lanAudioPlayer.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.3 Add the song &amp; player in the post (markdown)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>= <span class="string">'yourMP3 URL'</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'player'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'the ablum pic --&gt; Optional'</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'info'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'name'</span>&gt;</span>Name of the Song<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'singer'</span>&gt;</span>Singer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'btns'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"iconfont play-pause icon-play"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"iconfont next icon-next"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'progress'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.4 Deploy and Enjoy the music</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Looking back at how I implemented the audio player, it is actually fairly simple. However, I felt it really took a long time for me to add this feature. What I can say is that probably 5% of the time was spent on learning and try-N-Error scripting and the rest of the time were mostly wasted on meaningless issues of connecting China and the world based on FREE services.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/ddb3530/" rel="prev" title="Hexo - Add Customized Leaflet Map">
+      <i class="fa fa-chevron-left"></i> Hexo - Add Customized Leaflet Map
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/3f6d8e38/" rel="next" title="Hexo - Add Word Count">
+      Hexo - Add Word Count <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Theme-Song-of-Today"><span class="nav-number">1.</span> <span class="nav-text">Theme Song of Today</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Another-Uncommon-Hexo-Approach"><span class="nav-number">2.</span> <span class="nav-text">Another Uncommon Hexo Approach</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">3.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lanVoyager</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lanVoyager</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">124k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:52</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

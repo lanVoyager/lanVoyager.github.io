@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://lanVoyager.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Another feature for my imaginary readers :)">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo - Add RSS">
+<meta property="og:url" content="https://lanVoyager.github.io/posts/252dd1fe/index.html">
+<meta property="og:site_name" content="lanVoyager | toHave-N-haveNot">
+<meta property="og:description" content="Another feature for my imaginary readers :)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.dropbox.com/s/g8d0kpqn2lneq2x/rss1.png?raw=1">
+<meta property="og:image" content="https://www.dropbox.com/s/5jhznejen2anogw/rss2.png?raw=1">
+<meta property="og:updated_time" content="2020-01-14T18:24:25.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo - Add RSS">
+<meta name="twitter:description" content="Another feature for my imaginary readers :)">
+<meta name="twitter:image" content="https://www.dropbox.com/s/g8d0kpqn2lneq2x/rss1.png?raw=1">
+
+<link rel="canonical" href="https://lanVoyager.github.io/posts/252dd1fe/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Hexo - Add RSS | lanVoyager | toHave-N-haveNot</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lanVoyager | toHave-N-haveNot</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">大道无形</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://lanVoyager.github.io/posts/252dd1fe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lanVoyager">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lanVoyager | toHave-N-haveNot">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo - Add RSS
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-18 20:38:29" itemprop="dateCreated datePublished" datetime="2019-07-18T20:38:29-07:00">2019-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-14 11:24:25" itemprop="dateModified" datetime="2020-01-14T11:24:25-07:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nerdyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">nerdyNotes</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Another feature for my imaginary readers :)</p>
+<a id="more"></a>
+
+<p>Day 9 with Hexo. Yes, I took a night off yesterday.</p>
+<h1 id="An-Intro-to-RSS"><a href="#An-Intro-to-RSS" class="headerlink" title="An Intro to RSS"></a>An Intro to RSS</h1><blockquote>
+<p><strong>RSS</strong> (originally <strong>RDF Site Summary</strong>; later, two competing approaches emerged, which used the backronyms  <strong>Rich Site Summary</strong> and <strong>Really Simple Syndication</strong> respectively) is a type of web feed which allows users and applications to access updates to websites in a standardized, computer-readable format.</p>
+</blockquote>
+<p>Long story in short, it’s sort of a ‘subscription’ to a website. In our case, if you hit the ‘RSS’ button of this blog, whenever a new post is up, you will recieve the content in your RSS reader. So the information comes to you instead of you checking for it. Wait, we are in 2019, an era of <code>BIG DATA, AI, MACHINE LEARNING, DEEP LEARNING</code> with all these fancy names. The data and storage units now come with terabyte, petabyte, exabyte, zettabyte and yottabyte. We already have all the stories/ads ‘machine picked’ for us from our Facebook page, WeChat app, Google Story etc. And also, I don’t know you guys, I sometimes hit the ‘subscribe button’ &amp; provide my shopping email account for weekly ads, which I am very regret doing this. My email acount is full of promotion emails and it’s REALLY DIFICULT to unsubscribe them. First, the ‘unsubcribe’ link is so difficult to find in the email. Second, some websites say ‘It will take about 10 business days for us to remove you from our list.’ ╯﹏╰ And the worst thing is, I am still receiving them!!!</p>
+<p>So why RSS?</p>
+<ul>
+<li>It’s active selection. You choose to what to follow.</li>
+<li>You don’t provide your email account. No spam and you don’t even receive a notification email.</li>
+<li>Unsubcription is just a click of button. </li>
+<li>Honestly, it’s a new ‘old’ thing to me and after my quick research, it seems to be cool on my blog. I know my potential readers will be counted in bytes. It’s for your convenience. </li>
+</ul>
+<h1 id="Add-RSS-to-Hexo-Blog"><a href="#Add-RSS-to-Hexo-Blog" class="headerlink" title="Add RSS to Hexo Blog"></a>Add RSS to Hexo Blog</h1><p>Step 1: install the RSS plugin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+
+<p>Step 2: setup in blog _config.yml:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Plugins:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo-generator-feed</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">atom</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">atom.xml</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>For acceptable args, please refer to its github page:</p>
+<p><a href="https://github.com/hexojs/hexo-generator-feed" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/hexojs/hexo-generator-feed</a></p>
+<p>Step 3: setup in theme _config.yml:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo-generator-feed required for rss support. Leave rss as blank to use site's feed link.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>Step 4: deploy Hexo blog</p>
+<p>The RSS icon can be found on the side navbar.</p>
+<img src="https://www.dropbox.com/s/g8d0kpqn2lneq2x/rss1.png?raw=1" width="500" height="333">
+
+<h1 id="Subscription-amp-RSS-Reader"><a href="#Subscription-amp-RSS-Reader" class="headerlink" title="Subscription &amp; RSS Reader"></a>Subscription &amp; RSS Reader</h1><p>Now, we have ‘RSS’ feature enabled on my blog. In order to use it, you need to have some RSS reader.</p>
+<p>For Chrome Users, I recommend <a href="https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp/related?hl=en" rel="external nofollow noopener noreferrer" target="_blank">RSS Feed Reader</a> extension. This is what you will see when a new feed comes, pretty neat.</p>
+<img src="https://www.dropbox.com/s/5jhznejen2anogw/rss2.png?raw=1" width="500" height="333">
+
+
+
+<p>Enjoy reading! It’s a short Day 9 <o></o></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/9a962e6d/" rel="prev" title="Hexo - Add Site Map">
+      <i class="fa fa-chevron-left"></i> Hexo - Add Site Map
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/ddb3530/" rel="next" title="Hexo - Add Customized Leaflet Map">
+      Hexo - Add Customized Leaflet Map <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#An-Intro-to-RSS"><span class="nav-number">1.</span> <span class="nav-text">An Intro to RSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-RSS-to-Hexo-Blog"><span class="nav-number">2.</span> <span class="nav-text">Add RSS to Hexo Blog</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Subscription-amp-RSS-Reader"><span class="nav-number">3.</span> <span class="nav-text">Subscription &amp; RSS Reader</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lanVoyager</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lanVoyager</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">124k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:52</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

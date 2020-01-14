@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://lanVoyager.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Tips &amp;amp; steps to add Leaflet map to Hexo. This also discusses how to add html file &amp;amp; javascript to Hexo Blog!">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo - Add Customized Leaflet Map">
+<meta property="og:url" content="https://lanVoyager.github.io/posts/ddb3530/index.html">
+<meta property="og:site_name" content="lanVoyager | toHave-N-haveNot">
+<meta property="og:description" content="Tips &amp;amp; steps to add Leaflet map to Hexo. This also discusses how to add html file &amp;amp; javascript to Hexo Blog!">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.dropbox.com/s/j0zfcirr1me8dmo/wrongMapZoom.png?raw=1">
+<meta property="og:updated_time" content="2020-01-14T18:24:25.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo - Add Customized Leaflet Map">
+<meta name="twitter:description" content="Tips &amp;amp; steps to add Leaflet map to Hexo. This also discusses how to add html file &amp;amp; javascript to Hexo Blog!">
+<meta name="twitter:image" content="https://www.dropbox.com/s/j0zfcirr1me8dmo/wrongMapZoom.png?raw=1">
+
+<link rel="canonical" href="https://lanVoyager.github.io/posts/ddb3530/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Hexo - Add Customized Leaflet Map | lanVoyager | toHave-N-haveNot</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lanVoyager | toHave-N-haveNot</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">大道无形</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://lanVoyager.github.io/posts/ddb3530/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lanVoyager">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lanVoyager | toHave-N-haveNot">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo - Add Customized Leaflet Map
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-24 22:51:54" itemprop="dateCreated datePublished" datetime="2019-07-24T22:51:54-07:00">2019-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-14 11:24:25" itemprop="dateModified" datetime="2020-01-14T11:24:25-07:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nerdyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">nerdyNotes</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Tips &amp; steps to add Leaflet map to Hexo. This also discusses how to add html file &amp; javascript to Hexo Blog!</p>
+<a id="more"></a>
+
+<p>Day 15 with Hexo…</p>
+<p>Lots of things have happened over the past 6 days. On July 20, 2019, I went to my first US Major League Baseball game (Diamondbacks vs Brewers). We lost the game but it was very dramatic which deserves a standalone post on it (probably, I will not write a post on it). Also, July 22, 2019, first monsoon followed by dust storm hit Phoenix. We lost the power in my neighborhood that night. NO AC and temperature was about 33C (95F).  And of course, gym, endless house cleaning &amp; errands etc. kept me busy.</p>
+<h1 id="My-Initial-Travel-Plan-to-South-America"><a href="#My-Initial-Travel-Plan-to-South-America" class="headerlink" title="My Initial Travel Plan to South America"></a>My Initial Travel Plan to South America</h1><p>I have added several places I would like to visit for my South America trip. This is just for demonstration purpose. Actually I don’t have any fixed itineraries yet. Also, it only has very basic features. Hopefully, I will continue working on the javascript to add more interactive features &amp; information on my trip.</p>
+<div class="iframe-container">
+  <iframe src="https://lanVoyager.github.io/myLeafMap/index.html" allowfullscreen></iframe>
+</div>
+
+<h1 id="An-Uncommon-Hexo-Approach"><a href="#An-Uncommon-Hexo-Approach" class="headerlink" title="An Uncommon Hexo Approach"></a>An Uncommon Hexo Approach</h1><p>Ok, yes, Hexo has a plugin (<a href="https://github.com/ender74/hexo-tag-leaflet" rel="external nofollow noopener noreferrer" target="_blank">hexo-tag-leaflet</a>). I have to admit probably I am not smart enough to use it plus many other plugins (like the audio player which I will discuss it in another post). Fast forward to the conclusion, after hours of trail-and-error, to be accurate, mostly errors, I gave up on the plugin and decided to just use HTML &amp; JAVASCRIPT for this map. Assume you know how that is done. This section, we will only focus on how to add the HTML &amp; JAVASCRIPT of the map to HEXO.</p>
+<p>Short answer is to use <code>iframe</code> to embed your HTML. Sounds simple, right? NO!!! At least, I was not the lucky person. So the long answer is the following:</p>
+<p>Step 1: Have your leaflet map ready in HTML &amp; Javascript. My structure for the demo map is the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-----myLeafMap</span><br><span class="line"></span><br><span class="line">   |----index.html</span><br><span class="line"></span><br><span class="line">   |----main.js </span><br><span class="line"></span><br><span class="line">   |----geoData (where the geoJson data is stored)</span><br></pre></td></tr></table></figure>
+
+<p>Step 2: Put the above folder (myLeafMap) under {yourBlog}\source</p>
+<p>Step 3: Add the iframe in the MarkDown (the post where you want to display the map)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://yourGithubID.github.io/myLeafMap/index.html"</span> <span class="attr">width</span>=<span class="string">"700"</span> <span class="attr">height</span>=<span class="string">"800"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Important:</strong> include <code>https://</code> when you provide the URL for the HTML. I was lazy and omitted that since I was manually typing them. This is a bloody error which I spent hours to figure out why it was not working. </p>
+<p><em>The issue:</em> </p>
+<p>The map will display on the landing page but if you click the post, you will encounter 404 page (resource not found).</p>
+<p><em>The reason:</em></p>
+<p><del>It’s due to HEXO’s dir structure. If you don’t provide complete URL, it looks for the files in relative path which is  yourPost/yourGithubID.github.io/myLeafMap/index.html. However, if you follow Step 3, when you deploy, everything is under public folder. Many users reported difficulties to upload local imgages. That is mainly due to Hexo’s understanding of dir structures. A common solution is to use <code>asset</code> folder (<a href="https://hexo.io/docs/asset-folders.html" rel="external nofollow noopener noreferrer" target="_blank">https://hexo.io/docs/asset-folders.html</a>).</del></p>
+<span class="lanComment">
+
+<p>Correction on August 1, 2019: I should not blame HEXO structure. The issue is more related to absolute path vs. relative path in HTML. If the complete URL is not provided, HTML thinks it’s relative path and that’s the reason why it would try to find the embedded leaflet scripts under the post folder when the post page is opened. </p>
+</span>
+
+<p><em>The solution:</em></p>
+<p>Tried several things and decided the best is just use your URL hosted in github as in Step 3. Just remember to include <code>https://</code></p>
+<p>Step 4: Deploy and Wish You Success!!!</p>
+<h1 id="Further-Advanced-Improvements"><a href="#Further-Advanced-Improvements" class="headerlink" title="Further Advanced Improvements"></a>Further Advanced Improvements</h1><p>Yes, the map is up &amp; working. But not perfectly. We want to make the map (iframe) to be automatically re-size depends on the device your reader is using. Otherwise, it just looks ugly.</p>
+<p>OK to do it, we will move on to a new era of HEXO. Once I succeeded this task, I believed that I have the freedom of customizing most of the items I want on this blog. Also, please check out my post on audio player there I plan to add customized JS file. With these two, we can do anything in the way we want! I believe I can say goodbye to most of the HEXO plugins very soon.</p>
+<p>So how? The trick is to add customized CSS file for iframe, actually the iframe container. Don’t challenge my knowledge in HTML. I believe we can’t change iframe.</p>
+<p>The example is based on <code>next</code> theme.</p>
+<p>Step 1: Create a new folder say <code>_myCSS</code>under <code>{yourBlog}\themes\next\source\css</code></p>
+<p>Step 2: Create a new file say <code>newCSS.styl</code> and use the following code. (Refer: <a href="https://benmarshall.me/responsive-iframes/" rel="external nofollow noopener noreferrer" target="_blank">https://benmarshall.me/responsive-iframes/</a>)</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.iframe-container</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="comment">// Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)</span></span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">56.25%</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.iframe-container</span> <span class="selector-tag">iframe</span> &#123;</span><br><span class="line">   <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">   <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">position</span>: absolute;</span><br><span class="line">   <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Step 3: Add the new CSS to the theme. Go to <code>{yourBlog}\themes\next\source\css</code>and open <code>main.styl</code>. Add the following:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Newly Defined CSS</span></span><br><span class="line"> @import <span class="string">"_myCSS/newCSS"</span></span><br></pre></td></tr></table></figure>
+
+<p>Step 4: Deploy &amp; test it out on your PC, iPAD and/or smart phone!</p>
+<h1 id="Another-Step-Further"><a href="#Another-Step-Further" class="headerlink" title="Another Step Further"></a>Another Step Further</h1><p>Now, you understand why it took me so long to write this post…</p>
+<p>Yes, the map (iframe) on your blog is responsive to the viewer (device). But the Leaflet map is NOT. Or at least, my initial leaflet map was not viewer responsive. I set it to fit my computer screen with fixed zoom level and center location. But your frame size changes. So you may see something like this:</p>
+<img src="https://www.dropbox.com/s/j0zfcirr1me8dmo/wrongMapZoom.png?raw=1" width="500" height="333">
+
+<p>What we want is no matter where the blog is read, when the map is loaded it will display entire itineraries (show all geojson locations). To make this work, we will change the HTML.</p>
+<p>Here is the official leaflet tutorial on this. It is pretty straightforward to follow. Yes, only the HEXO world is complex to me. </p>
+<p><a href="https://leafletjs.com/examples/mobile/" rel="external nofollow noopener noreferrer" target="_blank">https://leafletjs.com/examples/mobile/</a></p>
+<p>END of this post and let’s celebrate Day 16 with Hexo. Another long night of working…</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/252dd1fe/" rel="prev" title="Hexo - Add RSS">
+      <i class="fa fa-chevron-left"></i> Hexo - Add RSS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/cc037a0/" rel="next" title="Hexo - Add Audio Player">
+      Hexo - Add Audio Player <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#My-Initial-Travel-Plan-to-South-America"><span class="nav-number">1.</span> <span class="nav-text">My Initial Travel Plan to South America</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#An-Uncommon-Hexo-Approach"><span class="nav-number">2.</span> <span class="nav-text">An Uncommon Hexo Approach</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Further-Advanced-Improvements"><span class="nav-number">3.</span> <span class="nav-text">Further Advanced Improvements</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Another-Step-Further"><span class="nav-number">4.</span> <span class="nav-text">Another Step Further</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lanVoyager</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lanVoyager</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">124k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:52</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

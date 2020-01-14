@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://lanVoyager.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="This is just my study note archiving useful tricks &amp;amp; tips for Hexo blog development. Another boring technical post.">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexoTips">
+<meta property="og:url" content="https://lanVoyager.github.io/posts/a6eb593f/index.html">
+<meta property="og:site_name" content="lanVoyager | toHave-N-haveNot">
+<meta property="og:description" content="This is just my study note archiving useful tricks &amp;amp; tips for Hexo blog development. Another boring technical post.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1u4yGI6rII6DmTNLY9Senibm9v--_-r6-">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1di6O2zHzLx375H2KKPTKdfSKLidr17v3">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1wF4sNAQrwqZXkoVl6bc6SwfOvuv1h_Gw">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1c2ErYYgPTStbiY5QdHQs8dzIuQbLqr4F">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=17oiuJ2Mm1O_d_AReiIR5L8UBlqiFytwT">
+<meta property="og:updated_time" content="2020-01-14T18:24:25.477Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexoTips">
+<meta name="twitter:description" content="This is just my study note archiving useful tricks &amp;amp; tips for Hexo blog development. Another boring technical post.">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1u4yGI6rII6DmTNLY9Senibm9v--_-r6-">
+
+<link rel="canonical" href="https://lanVoyager.github.io/posts/a6eb593f/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>hexoTips | lanVoyager | toHave-N-haveNot</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lanVoyager | toHave-N-haveNot</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">大道无形</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://lanVoyager.github.io/posts/a6eb593f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lanVoyager">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lanVoyager | toHave-N-haveNot">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexoTips
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-15 21:56:58" itemprop="dateCreated datePublished" datetime="2019-07-15T21:56:58-07:00">2019-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-14 11:24:25" itemprop="dateModified" datetime="2020-01-14T11:24:25-07:00">2020-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nerdyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">nerdyNotes</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>This is just my study note archiving useful tricks &amp; tips for Hexo blog development. Another boring technical post.</p>
+<a id="more"></a>
+
+<h1 id="Adding-Abstract-on-The-Landing-Page"><a href="#Adding-Abstract-on-The-Landing-Page" class="headerlink" title="Adding Abstract on The Landing Page"></a>Adding Abstract on The Landing Page</h1><p>Goal: only post the abstract on the landing page with a link to access the full page.</p>
+<p><strong>Approach 1</strong>: Add description into the front-matter of the markdown file</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexoTips</span><br><span class="line">tags: Hexo</span><br><span class="line">categories: nerdyNotes</span><br><span class="line">description: This is just my study note archiving useful tricks &amp; tips for Hexo blog development. Another boring technical post.</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><strong>Approach 2</strong>: edit theme_config file <code>yourBlog\themes\themeName\_config.yml</code>:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  length:</span> <span class="number">150</span></span><br></pre></td></tr></table></figure>
+
+<p>The above script will show the first 150 words of your post as abstract on the landing page. The length can be changed if needed.</p>
+<p><strong>Approach 3</strong>: manually add Abstract in your post (md file) directly.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexoTips</span><br><span class="line">tags: Hexo</span><br><span class="line">categories: nerdyNotes</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">scr</span>=<span class="string">'sample.png'</span> <span class="attr">width</span> = <span class="string">"900"</span> <span class="attr">height</span> = <span class="string">"600"</span> <span class="attr">alt</span>=<span class="string">"sample"</span> <span class="attr">align</span>=<span class="string">center</span> /&gt;</span></span></span><br><span class="line"></span><br><span class="line">Add your Abstract...</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br><span class="line"></span><br><span class="line">Add the body of the post...</span><br></pre></td></tr></table></figure>
+
+<h1 id="Adding-Customized-Blocks"><a href="#Adding-Customized-Blocks" class="headerlink" title="Adding Customized Blocks"></a>Adding Customized Blocks</h1><p>Date: August 2, 2019</p>
+<p>Goal: add comment block</p>
+<span class="lanComment">
+
+<p>This is a comment block</p>
+</span>
+
+<p>Solution: add customerized CSS </p>
+<p>Step 1: add the following block in your CSS file under yourBlog/theme/next/source/css (details refer to post on <a href="https://lanVoyager.github.io/posts/ddb3530">LeafLet Map</a>)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">span.lanComment &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  width: 100%;</span><br><span class="line">  padding: 5px;</span><br><span class="line">   background-color: #FFFACD; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Step 2: in your mark down post, use the following when a comment block is needed.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">'lanComment'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">This is a comment block</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Add-Centered-Quotation-Block"><a href="#Add-Centered-Quotation-Block" class="headerlink" title="Add Centered Quotation Block"></a>Add Centered Quotation Block</h1><p>Date: August 14, 2019</p>
+<p>Goal: add centered quotation block</p>
+<blockquote class="blockquote-center"><p>This is a test!</p>
+</blockquote>
+
+
+
+<p>Three approaches:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 1. HTML Approach: directly write in Markdown --&gt;</span><br><span class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 2. Use Tag --&gt;</span><br><span class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 3. cq == centerquote --&gt;</span><br><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Pin-A-Post-at-Top-of-the-Blog"><a href="#Pin-A-Post-at-Top-of-the-Blog" class="headerlink" title="Pin A Post at Top of the Blog"></a>Pin A Post at Top of the Blog</h1><p>Date: August 14, 2019</p>
+<p>Goal:Pin a post at top of the blog. Use <code>hexo-generator-index-pin-top</code></p>
+<img src="https://drive.google.com/uc?export=download&id=1u4yGI6rII6DmTNLY9Senibm9v--_-r6-">
+
+<p>Step 1:  install the plugin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-generator-index --save</span><br><span class="line">$ npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+
+<p>Step 2: pin the post in markdown’s front-matter</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: postName</span><br><span class="line">top: true</span><br><span class="line">date: </span><br><span class="line">tags:</span><br><span class="line">categories:</span><br></pre></td></tr></table></figure>
+
+<p>Step 3: Add Pin Icon. Open<code>post.swig</code> in <code>/blog/themes/next/layout/_macro</code>, locate<code>&lt;div class=&quot;post-meta&quot;&gt;</code>  div and add the following script.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;  </span><br><span class="line">	&lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;  </span><br><span class="line">	&lt;font color=7D26CD&gt;PINNED&lt;/font&gt;  </span><br><span class="line">	&lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Font-Color-amp-Size"><a href="#Font-Color-amp-Size" class="headerlink" title="Font Color &amp; Size"></a>Font Color &amp; Size</h1><p>Date: August 14, 2019</p>
+<p>Goal: customize font color &amp; size in a post</p>
+<p>  <font size="12">bigger font size </font></p>
+<p><font color="red"> this is a line of red text </font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;font size=12 &gt; bigger font size &lt;/font&gt;</span><br><span class="line"></span><br><span class="line">&lt;font color=&quot;red&quot;&gt; this is a line of red t &lt;/font&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Asset-Hosting"><a href="#Asset-Hosting" class="headerlink" title="Asset Hosting"></a>Asset Hosting</h1><p>Date: August 20, 2019</p>
+<p>Goal: settle down on asset hosting sites. NOT FOR MAINLAND CHINA!!! The ones I tested are all blocked in China. The Chinese services all rejected my registrations from U.S.</p>
+<h2 id="Initial-Hosting-Site-Dropbox"><a href="#Initial-Hosting-Site-Dropbox" class="headerlink" title="Initial Hosting Site: Dropbox"></a>Initial Hosting Site: Dropbox</h2><p><strong>Limitation:</strong> 2G only and require you to install Dropbox app to get the external link. Also I need to maintain an extra account outside Google…However, in general, it’s really good for the purpose of hosting assests of this blog. I just want to consolidate resources and reduce number of accounts and apps I use.</p>
+<p><strong>How to Get Extneral Link?</strong></p>
+<p>Step 1: Apply for a <a href="https://www.dropbox.com" rel="external nofollow noopener noreferrer" target="_blank">Dropbox</a> account</p>
+<p>Step 2: Install the <a href="https://www.dropbox.com/install" rel="external nofollow noopener noreferrer" target="_blank">Dropbox App</a></p>
+<p>Step 3: From your sync folder or the Dropbox app, choose the file, right click and select ‘Copy Link’</p>
+<img src="https://drive.google.com/uc?export=download&id=1di6O2zHzLx375H2KKPTKdfSKLidr17v3">
+
+<p>Step 4: Modify the dropbox link</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">original Link: https://www.dropbox.com/s/xxxxxx/hexo-add-view-count-firestore_1.png?dl=0</span><br><span class="line">modified Link: https://www.dropbox.com/s/xxxxxx/hexo-add-view-count-firestore_1.png?raw=1</span><br></pre></td></tr></table></figure>
+
+<p>Step 5: embed the modified link into the markdown post </p>
+<h1 id="Current-Hosting-Site-Google-Drive"><a href="#Current-Hosting-Site-Google-Drive" class="headerlink" title="Current Hosting Site: Google Drive"></a>Current Hosting Site: Google Drive</h1><p><strong>Reason:</strong> personal perference and it meets all my needs at the moment with 15G space and linked to my Google account smoothly. Also, no app is required to use it.</p>
+<h2 id="How-to-Get-External-Link"><a href="#How-to-Get-External-Link" class="headerlink" title="How to Get External Link"></a>How to Get External Link</h2><p>I believe most pepole know how to upload files to Google Drive. Let’s skip this step.</p>
+<p>Step 1: On your Google Drive, select the file you want to use for the blog. Right click and select ‘Get shareable link’</p>
+<img src="https://drive.google.com/uc?export=download&id=1wF4sNAQrwqZXkoVl6bc6SwfOvuv1h_Gw">
+
+<p>Step 2: Modify ‘Link sharing’ properties, by clicking <code>More...</code></p>
+<img src="https://drive.google.com/uc?export=download&id=1c2ErYYgPTStbiY5QdHQs8dzIuQbLqr4F">
+
+<p>Step 3: Select <code>Public on the web</code></p>
+<img src="https://drive.google.com/uc?export=download&id=17oiuJ2Mm1O_d_AReiIR5L8UBlqiFytwT">
+
+<p>Step 4: Modify the link</p>
+<p><strong>Original Link Copied from Google Drive:</strong></p>
+<p><a href="https://drive.google.com/file/d/" rel="external nofollow noopener noreferrer" target="_blank">https://drive.google.com/file/d/</a><font color="red">stringAsFileID</font>/view?usp=sharing</p>
+<p><strong>Modified Link</strong></p>
+<p><a href="https://drive.google.com/uc?export=download&amp;id=" rel="external nofollow noopener noreferrer" target="_blank">https://drive.google.com/uc?export=download&amp;id=</a><font color="red">copyStringAsFileIDHere</font></p>
+<p>Step 5: embed the modified link into the markdown post </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/90aeeb0d/" rel="prev" title="Hexo Initial Setup">
+      <i class="fa fa-chevron-left"></i> Hexo Initial Setup
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/66a6d538/" rel="next" title="Hexo - Add Gitalk Comment">
+      Hexo - Add Gitalk Comment <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Adding-Abstract-on-The-Landing-Page"><span class="nav-number">1.</span> <span class="nav-text">Adding Abstract on The Landing Page</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adding-Customized-Blocks"><span class="nav-number">2.</span> <span class="nav-text">Adding Customized Blocks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-Centered-Quotation-Block"><span class="nav-number">3.</span> <span class="nav-text">Add Centered Quotation Block</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pin-A-Post-at-Top-of-the-Blog"><span class="nav-number">4.</span> <span class="nav-text">Pin A Post at Top of the Blog</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Font-Color-amp-Size"><span class="nav-number">5.</span> <span class="nav-text">Font Color &amp; Size</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Asset-Hosting"><span class="nav-number">6.</span> <span class="nav-text">Asset Hosting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Initial-Hosting-Site-Dropbox"><span class="nav-number">6.1.</span> <span class="nav-text">Initial Hosting Site: Dropbox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Current-Hosting-Site-Google-Drive"><span class="nav-number">7.</span> <span class="nav-text">Current Hosting Site: Google Drive</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-Get-External-Link"><span class="nav-number">7.1.</span> <span class="nav-text">How to Get External Link</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lanVoyager</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lanVoyager</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">124k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:52</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
