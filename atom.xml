@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lanVoyager.github.io/"/>
-  <updated>2020-01-14T19:00:53.418Z</updated>
+  <updated>2020-01-16T20:48:08.754Z</updated>
   <id>https://lanVoyager.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://lanVoyager.github.io/posts/1bde756e/"/>
     <id>https://lanVoyager.github.io/posts/1bde756e/</id>
     <published>2020-01-14T18:51:05.000Z</published>
-    <updated>2020-01-14T19:00:53.418Z</updated>
+    <updated>2020-01-16T20:48:08.754Z</updated>
     
-    <content type="html"><![CDATA[<p>Procrastination…I admit that I was back to my sweet home last year to be exact at midnight December 24, 2019 after 4+ months adventure in South America. Then I was on real do-nothing vacation first for couple of days followed by researching and planning my next Africa trip. Finally, I am back to update my blog…still before I can do that, I need to move the work to my desktop. Hopefully, this works. Let’s check out the first push from the desk top!</p><a id="more"></a><p>Now the nerdy parts for enabling editing Hexo blogs from multiple computers, the reference link is here:</p><p><a href="https://liziczh.com/hexo-multimachine.html" rel="external nofollow noopener noreferrer" target="_blank">https://liziczh.com/hexo-multimachine.html</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Procrastination…I admit that I was back to my sweet home last year to be exact at midnight December 24, 2019 after 4+ months adventure in South America. Then I was on real do-nothing vacation first for couple of days followed by researching and planning my next Africa trip. Finally, I am back to update my blog…still before I can do that, I need to move the work to my desktop. Hopefully, this works. Let’s check out the first push from the desk top!</p><a id="more"></a><h1 id="The-Need-for-Working-on-Multiple-PCs"><a href="#The-Need-for-Working-on-Multiple-PCs" class="headerlink" title="The Need for Working on Multiple PCs"></a>The Need for Working on Multiple PCs</h1><p>You may say I am listing the excuses for not updating my blog in real-time during my travel. However, it was really difficult to find time between all the extreme hiking trails,  planning for my next stop, a decent table to put my laptop and most important WIFI connections many times.  Even if all the above conditions were met, I was just exhausted but to lay on my bed to have some rests…</p><p>Now I am back to home for a short break. Before my next adventure to Africa, I am determined to complete my travel trajectories in South America. Yes, step one is to find myself a better working environment which is a good computer desk with large monitor and a decent hard disk storage space! Dear friend, one suggestion, do be allured by cheaper price for a small SDD drive, you may pay higher price later. I was stupid for that to order my ultra book with only 128G several years ago. What I was thinking about?! What’s worse is the monster Windows 10, it has system update all the time and requires 10+ G for that?! Enough! I am moving to my desktop for Hexo blog.</p><h1 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h1><p>Long story in short, I prepared my desktop so that I can publish Hexo blog from my desktop. </p><p><strong>Step 1: Add Branch to Your Blog Repository</strong>  </p><p>On the local PC, in my case, my Dell laptop, go to the blog folder and Git Bash there and do the following:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Blog Initialization</span><br><span class="line">$ git init  </span><br><span class="line"># Add new branch (name: backup)</span><br><span class="line">$ git checkout -b backup  </span><br><span class="line"># add files in the working directory to the staging area</span><br><span class="line">$ git add .  </span><br><span class="line"># commit your files</span><br><span class="line">$ git commit -m &quot;commit message&quot;  </span><br><span class="line"># add remote repository</span><br><span class="line">$ git remote set-url https://github.com/yourname/yourname.github.io.git</span><br><span class="line"># push the local to remote</span><br><span class="line">$ git push origin backup</span><br></pre></td></tr></table></figure><p><strong>Step 2: Prepare New PC</strong></p><p>On the new computer, i.e. my desktop do the following:</p><p>2.1 Install Git</p><p>2.2 Install Nodejs</p><p>2.3 Prepare the Blog</p><ul><li>​      Create a new folder for hexoBlog </li><li>​      Git Bash and do the following:</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># clone hexo blog branch to this working folder</span><br><span class="line">$ git clone -b backup https://github.com/yourname/yourname.github.io.git</span><br><span class="line"># enter yourname.github.io folder</span><br><span class="line">$ cd yourname.github.io</span><br><span class="line"># install hexo</span><br><span class="line">$ npm install hexo --save</span><br><span class="line"># install hexo command mode</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line"># install all dependencies (according to package.json, this will automatically install previously installed dependencies)</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure><p>2.4 Add SSH Key</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Generate SSH key</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure><p>Then go to the .ssh folder (default: C:\Users\yourUserName\.ssh), open “id_rsa.pub” and copy all the contents in this file.</p><p>Now go to Github.com and log in. Under ‘Settings’\‘SSH and GPG keys’ add the SSH key (the contents copied from id_rsa.pub)</p><p>2.5 Add Remote Repository</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote set-url  https://github.com/yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure><p>2.6 Add your theme</p><p>In this case, my theme is <code>next</code>(<a href="https://github.com/theme-next/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/theme-next/hexo-theme-next</a>)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><p>2.7 Test it out</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure><p>2.8 Push anything new to the backup branch</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;commit-message&quot;</span><br><span class="line">$ git push origin backup</span><br></pre></td></tr></table></figure><p>The reference link is here:</p><p><a href="https://liziczh.com/hexo-multimachine.html" rel="external nofollow noopener noreferrer" target="_blank">https://liziczh.com/hexo-multimachine.html</a></p>]]></content>
     
     <summary type="html">
     
@@ -134,13 +134,13 @@
       <category term="logbook" scheme="https://lanVoyager.github.io/categories/logbook/"/>
     
     
-      <category term="Peru" scheme="https://lanVoyager.github.io/tags/Peru/"/>
-    
       <category term="Chachapoyas" scheme="https://lanVoyager.github.io/tags/Chachapoyas/"/>
     
       <category term="Kuelap" scheme="https://lanVoyager.github.io/tags/Kuelap/"/>
     
       <category term="Gocta Waterfall" scheme="https://lanVoyager.github.io/tags/Gocta-Waterfall/"/>
+    
+      <category term="Peru" scheme="https://lanVoyager.github.io/tags/Peru/"/>
     
   </entry>
   
@@ -162,11 +162,11 @@
       <category term="logbook" scheme="https://lanVoyager.github.io/categories/logbook/"/>
     
     
+      <category term="Peru" scheme="https://lanVoyager.github.io/tags/Peru/"/>
+    
       <category term="La Granja Porcon" scheme="https://lanVoyager.github.io/tags/La-Granja-Porcon/"/>
     
       <category term="Cajamarca" scheme="https://lanVoyager.github.io/tags/Cajamarca/"/>
-    
-      <category term="Peru" scheme="https://lanVoyager.github.io/tags/Peru/"/>
     
   </entry>
   
