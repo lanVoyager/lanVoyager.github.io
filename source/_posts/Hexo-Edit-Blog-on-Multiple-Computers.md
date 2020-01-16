@@ -109,7 +109,27 @@ The reference link is here:
 
 https://liziczh.com/hexo-multimachine.html
 
+# Issues
 
+As always, there are some issues every time I implement something here :{
 
+## Issue 1: git push failed
 
+As listed in 2.8, I want to push my new posts to the repository branch, using `git push origin backup`, ended up with fatal error no repository found...
+
+Reason: I am using SSH key
+
+Solution: set-url differently
+
+```
+$ git remote set-url origin git@github.com:yourName/yourName.github.io.git
+```
+
+## Issue 2:  All custom theme lost
+
+For some reasons, when I push local hexoBlog folder from my laptop, the `themes` folder was not pushed. That is why I need to install the theme again. However, I made several custom changes to this theme which were all lost...
+
+Simple Solution: copy the entire `themes/next` folder to desktop. 
+
+Yes, there are several approaches to push the themes folder to the repository. I tried some but nothing worked. To save time, just do the stupid and quick way. Otherwise, I will never get to update the real travel blog...
 
