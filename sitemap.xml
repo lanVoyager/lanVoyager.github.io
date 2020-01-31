@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/amazonMap/geoData/amazonPoints.json</loc>
+    <loc>https://lanVoyager.github.io/amazonMap/geoData/lanCity.json</loc>
     
     <lastmod>2020-01-14T18:24:25.480Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/amazonMap/geoData/lanCity.json</loc>
+    <loc>https://lanVoyager.github.io/amazonMap/geoData/amazonPoints.json</loc>
     
     <lastmod>2020-01-14T18:24:25.480Z</lastmod>
     
@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/posts/764cde41/</loc>
+    <loc>https://lanVoyager.github.io/posts/a6eb593f/</loc>
     
     <lastmod>2020-01-14T18:24:25.477Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/posts/a6eb593f/</loc>
+    <loc>https://lanVoyager.github.io/posts/764cde41/</loc>
     
     <lastmod>2020-01-14T18:24:25.477Z</lastmod>
     
@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/posts/df50ebdf/</loc>
-    
-    <lastmod>2020-01-14T18:24:25.476Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lanVoyager.github.io/posts/90aeeb0d/</loc>
     
     <lastmod>2020-01-14T18:24:25.476Z</lastmod>
@@ -156,9 +149,9 @@
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/posts/cb2821a6/</loc>
+    <loc>https://lanVoyager.github.io/posts/df50ebdf/</loc>
     
-    <lastmod>2020-01-14T18:24:25.475Z</lastmod>
+    <lastmod>2020-01-14T18:24:25.476Z</lastmod>
     
   </url>
   
@@ -171,6 +164,13 @@
   
   <url>
     <loc>https://lanVoyager.github.io/posts/3f6d8e38/</loc>
+    
+    <lastmod>2020-01-14T18:24:25.475Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lanVoyager.github.io/posts/cb2821a6/</loc>
     
     <lastmod>2020-01-14T18:24:25.475Z</lastmod>
     
@@ -191,13 +191,6 @@
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/posts/fccd4861/</loc>
-    
-    <lastmod>2020-01-14T18:24:25.473Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lanVoyager.github.io/posts/cc037a0/</loc>
     
     <lastmod>2020-01-14T18:24:25.473Z</lastmod>
@@ -205,14 +198,21 @@
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/posts/9a962e6d/</loc>
+    <loc>https://lanVoyager.github.io/posts/fccd4861/</loc>
+    
+    <lastmod>2020-01-14T18:24:25.473Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lanVoyager.github.io/posts/66a6d538/</loc>
     
     <lastmod>2020-01-14T18:24:25.472Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/posts/66a6d538/</loc>
+    <loc>https://lanVoyager.github.io/posts/9a962e6d/</loc>
     
     <lastmod>2020-01-14T18:24:25.472Z</lastmod>
     
