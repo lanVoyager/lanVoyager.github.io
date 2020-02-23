@@ -105,6 +105,12 @@ $ git commit -m "commit-message"
 $ git push origin backup
 ```
 
+2.9 Update/Pull everything on every computer
+
+```
+$ git pull origin backup
+```
+
 The reference link is here:
 
 https://liziczh.com/hexo-multimachine.html
