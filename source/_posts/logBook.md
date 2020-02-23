@@ -1,7 +1,6 @@
 ---
 title: Logbook
 categories: logbook
-top: true
 abbrlink: 9602864c
 date: 2019-08-16 02:01:56
 tags:
