@@ -46,44 +46,20 @@ Start Date of African Voyage: 4:30PM, 02-24-2020
 
 {% endnote %}
 
-This time the captian had rough plans for the African Voyager. Shanghai was originally planned to be the ports of calls for this African voyager and the flight ticket was purchased last December. Due to the coronavirus outbreak in China in January 2020, the captian had to cancel the voyager to China and start the African voyager directly from the home port - Phoenix, U.S. But the ship is now fully loaded although not as the original plan and captian is ready for the sailing!
+This time the captain had rough plans for the African Voyager. Shanghai was originally planned to be the ports of calls for this African voyager and the flight ticket was purchased last December. Due to the coronavirus outbreak in China in January 2020, the captain had to cancel the voyager to China and start the African voyager directly from the home port - Phoenix, U.S. But the ship is now fully loaded although not as the original plan and captain is ready for the sailing!
 
 # African Voyager - Ports of Calls
 
-At the moment, again the captain only had one-way flight ticket and one-night hostel reservation.
+At the moment, again the captain only had one-way flight ticket and one-night hostel reservation. **First port of call in Africa: Casablanca, Morocco!**
 
 # Planned Highlights of African Voyager:
 
 - Sahara
-
 - Egyptian Pyramids
-
 - Niles
-
-- Serengeti National Park (hopefully serveral other national parks in Africa)
-
+- Serengeti National Park (hopefully several other national parks in Africa)
 - Victoria Falls
-
 - Cute, beautiful and handsome animals!!!
-
-  
-
-  **First port of call in Africa: Casablanca, Morocco!**
-
-<audio src= 'https://drive.google.com/uc?id=1-1S6-xn9nbfqpunMjmyc_bnAsTGD7ZWp'></audio>
-<div class='player'>
-  <img src='https://drive.google.com/uc?id=15WYDe7NGwTjvYZ2VMVnVM89SubW216P0'/>
-  <div class='info'>
-    <div class='name'>Casablanca</div>
-    <div class='singer'>Bertie Higgins (movie song)</div>
-  </div>
-  <div class='btns'>
-    <div class="iconfont play-pause icon-play"></div>
-    <div class="iconfont next icon-next"></div>
-  </div>
-  <div class='progress'>
-  </div>
-</div>
 
 ## The Very Rough Plan
 
