@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lanVoyager.github.io/posts/4a61c06b/</loc>
+    
+    <lastmod>2020-02-23T18:16:21.271Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lanVoyager.github.io/posts/40fa178e/</loc>
     
     <lastmod>2020-02-14T22:50:54.944Z</lastmod>
@@ -93,14 +100,14 @@
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/amazonMap/geoData/amazonPoints.json</loc>
+    <loc>https://lanVoyager.github.io/amazonMap/geoData/lanCity.json</loc>
     
     <lastmod>2020-01-14T18:24:25.480Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lanVoyager.github.io/amazonMap/geoData/lanCity.json</loc>
+    <loc>https://lanVoyager.github.io/amazonMap/geoData/amazonPoints.json</loc>
     
     <lastmod>2020-01-14T18:24:25.480Z</lastmod>
     
