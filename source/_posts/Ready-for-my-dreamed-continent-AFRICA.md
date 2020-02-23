@@ -42,7 +42,7 @@ Hull Identification Number (HIN): CN-SHx-99999-Ix-8x
 
 Date of Africa Voyage Entry: 02-23-2020
 
-Date of Maiden Voyage: 4:30PM, 02-24-2020
+Start Date of African Voyage: 4:30PM, 02-24-2020
 
 {% endnote %}
 
@@ -55,20 +55,27 @@ At the moment, again the captain only had one-way flight ticket and one-night ho
 # Planned Highlights of African Voyager:
 
 - Sahara
+
 - Egyptian Pyramids
+
 - Niles
+
 - Serengeti National Park (hopefully serveral other national parks in Africa)
+
 - Victoria Falls
+
 - Cute, beautiful and handsome animals!!!
 
-**First port of call in Africa: Casablanca, Morocco!**
+  
+
+  **First port of call in Africa: Casablanca, Morocco!**
 
 <audio src= 'https://drive.google.com/uc?id=1-1S6-xn9nbfqpunMjmyc_bnAsTGD7ZWp'></audio>
 <div class='player'>
   <img src='https://drive.google.com/uc?id=15WYDe7NGwTjvYZ2VMVnVM89SubW216P0'/>
   <div class='info'>
     <div class='name'>Casablanca</div>
-    <div class='singer'>Bertie Higgins</div>
+    <div class='singer'>Bertie Higgins (movie song)</div>
   </div>
   <div class='btns'>
     <div class="iconfont play-pause icon-play"></div>
