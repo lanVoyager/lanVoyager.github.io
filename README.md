@@ -35,14 +35,15 @@ My picks for the blog theme and tools for development are soley based on the sha
 - Hexo Theme: [NexT](https://github.com/theme-next/hexo-theme-next)
 - Text Editor: [Sublime](https://www.sublimetext.com/)
 - Markdown Editor: [Typora](https://typora.io/)
-- Image Host: GoogleDrive 
+- Image Repository: GoogleDrive 
 
 # Customized Features Embedded
 
-- Image Repository
-- Music Player
+- Interactive Maps & Charts
+- Music Player Plug-in
 - Comment Plug-in 
-- Google Analytic Plug-in
+- Word Count Plug-in
+- Google Analytic Plug-in (View Count through Google FireBase)
 - Sitemap
 - RSS
 
@@ -51,4 +52,5 @@ Detailed implementation notes are documented [Here](https://lanvoyager.github.io
 # Lessons Learnt
 - Pickup Javascirpt and CSS with these two powerful skills I believe you can implement most features on Hexo blog! [Sample Implementation](https://lanvoyager.github.io/posts/cc037a0/#more)
 - Add Interactive Maps [Sample Implementation](https://lanvoyager.github.io/posts/ddb3530/#more)
-- Special Notes on Image Host: Due to the fact that popular cloud service like GoogleDrive, OneDrive, Dropbox are blocked in China, the pictures and audios on this blog is NOT viewable for readers from mainland China. In the inital development stage, I have tried several options to find a bypass. But due to strict registration requirements for Chinese Cloud Service, I basically failed all. 
+- Add Dynamic Feature into Static Framework [Sample Implementation](https://lanvoyager.github.io/posts/2ef3ae62/)
+- Special Notes on Image Repository: Due to the fact that popular cloud service like GoogleDrive, OneDrive, Dropbox are blocked in China, the pictures and audios on this blog is NOT viewable for readers from mainland China. In the inital development stage, I have tried several options to find a bypass. But due to strict registration requirements for Chinese Cloud Service, I basically failed all. 
